@@ -3,317 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BioMedia — медиаграмотность в биологии</title>
+<title>BioMedia — биологический медиадетектив</title>
 
 <style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f8f1;
-    color: #173b2a;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f8f4;
+  color: #173b2a;
 }
 
 header {
-    background: white;
-    border-bottom: 1px solid #dce7dc;
-    padding: 18px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  background: linear-gradient(135deg, #146b43, #2e9d65);
+  color: white;
+  padding: 28px 8%;
 }
 
 .logo {
-    font-size: 27px;
-    font-weight: 800;
-    color: #16834b;
+  font-size: 30px;
+  font-weight: 800;
 }
 
 .logo span {
-    color: #173b2a;
+  color: #c8f7d8;
 }
 
-nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: #315642;
-    font-weight: 600;
-    cursor: pointer;
+.header-content {
+  max-width: 1000px;
+  margin: auto;
 }
 
-nav a:hover {
-    color: #16834b;
+.header-content h1 {
+  font-size: 38px;
+  margin: 35px 0 10px;
 }
 
-.hero {
-    padding: 75px 7% 55px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-.hero-text {
-    max-width: 650px;
-}
-
-.badge {
-    display: inline-block;
-    background: #dff4df;
-    color: #197345;
-    padding: 10px 17px;
-    border-radius: 30px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 62px;
-    line-height: 1;
-    margin: 0 0 20px;
-}
-
-h1 span {
-    color: #16a05a;
-}
-
-.hero p {
-    font-size: 20px;
-    line-height: 1.6;
-    color: #53675a;
-}
-
-.button {
-    border: none;
-    padding: 15px 25px;
-    border-radius: 14px;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-    background: #168b4d;
-    color: white;
-    margin-top: 15px;
-}
-
-.button:hover {
-    background: #116b3b;
-}
-
-.hero-card {
-    background: white;
-    padding: 30px;
-    border-radius: 25px;
-    width: 340px;
-    box-shadow: 0 15px 45px rgba(30,80,45,.12);
-}
-
-.hero-card .cell {
-    font-size: 80px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.hero-card h3 {
-    margin-bottom: 10px;
-}
-
-.section {
-    padding: 55px 7%;
-}
-
-.section-title {
-    font-size: 36px;
-    margin-bottom: 35px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    border: 1px solid #dfe9df;
-    border-radius: 20px;
-    padding: 25px;
-    min-height: 190px;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(30,80,45,.1);
-}
-
-.icon {
-    font-size: 34px;
-}
-
-.card h3 {
-    font-size: 20px;
-}
-
-.card p {
-    color: #66756b;
-    line-height: 1.5;
-}
-
-.tool {
-    max-width: 850px;
-    margin: auto;
-    background: white;
-    border-radius: 25px;
-    padding: 35px;
-    box-shadow: 0 12px 40px rgba(30,80,45,.1);
+.header-content p {
+  font-size: 18px;
+  max-width: 700px;
+  line-height: 1.6;
 }
 
 .progress {
-    height: 9px;
-    background: #e5eee5;
-    border-radius: 10px;
-    margin: 20px 0 30px;
-    overflow: hidden;
+  margin-top: 25px;
+  background: rgba(255,255,255,.25);
+  height: 10px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .progress-bar {
-    height: 100%;
-    width: 20%;
-    background: #18a35b;
-    transition: .3s;
+  width: 20%;
+  height: 100%;
+  background: white;
+  transition: .4s;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 35px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 30px rgba(20,80,45,.08);
 }
 
 .step {
-    display: none;
+  display: none;
 }
 
 .step.active {
-    display: block;
+  display: block;
 }
 
 .step-number {
-    color: #168b4d;
-    font-weight: 700;
+  color: #2e9d65;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
-.question {
-    font-size: 24px;
-    line-height: 1.4;
-    margin: 15px 0 25px;
+h2 {
+  margin-top: 5px;
+  font-size: 28px;
+}
+
+textarea,
+input {
+  width: 100%;
+  border: 2px solid #d9e9df;
+  border-radius: 14px;
+  padding: 15px;
+  font-size: 16px;
+  font-family: inherit;
+  margin-top: 10px;
+  outline: none;
+}
+
+textarea:focus,
+input:focus {
+  border-color: #2e9d65;
 }
 
 textarea {
-    width: 100%;
-    min-height: 130px;
-    border: 2px solid #dce7dc;
-    border-radius: 14px;
-    padding: 15px;
-    font-size: 16px;
-    resize: vertical;
+  min-height: 130px;
+  resize: vertical;
 }
 
-textarea:focus {
-    outline: none;
-    border-color: #55ad78;
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 13px 22px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #198754;
+  color: white;
+  margin-top: 18px;
 }
 
-.options {
-    display: grid;
-    gap: 12px;
+button:hover {
+  background: #146b43;
 }
 
-.option {
-    padding: 15px;
-    border: 2px solid #dce7dc;
-    border-radius: 13px;
-    cursor: pointer;
+button.secondary {
+  background: #e8f3ec;
+  color: #17613e;
 }
 
-.option:hover {
-    border-color: #55ad78;
-    background: #f4faf4;
+button.secondary:hover {
+  background: #d8eadf;
 }
 
-.option.selected {
-    border-color: #168b4d;
-    background: #e8f6eb;
+.ai-box {
+  background: #f0faf4;
+  border-left: 5px solid #2e9d65;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 20px;
+  line-height: 1.6;
 }
 
-.controls {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 25px;
+.ai-title {
+  font-weight: 800;
+  margin-bottom: 8px;
 }
 
-.secondary {
-    background: #edf3ed;
-    color: #28553a;
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 18px;
 }
 
-.result {
-    display: none;
+.choice {
+  background: #f7fbf8;
+  border: 2px solid #d9e9df;
+  color: #173b2a;
+  text-align: left;
+  margin: 0;
 }
 
-.result-box {
-    background: #edf8ef;
-    border-left: 5px solid #168b4d;
-    padding: 20px;
-    border-radius: 12px;
-    line-height: 1.6;
+.choice.selected {
+  border-color: #198754;
+  background: #e8f7ed;
 }
 
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
+.source-box {
+  background: #f8faf9;
+  border: 1px solid #dfeae3;
+  border-radius: 15px;
+  padding: 18px;
+  margin-top: 20px;
 }
 
-.skill {
-    background: #e4f2e6;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 14px;
+.score {
+  font-size: 48px;
+  font-weight: 800;
+  color: #198754;
 }
 
-footer {
-    margin-top: 60px;
-    padding: 30px 7%;
-    background: #173b2a;
-    color: white;
-    text-align: center;
+.badge {
+  display: inline-block;
+  background: #e8f7ed;
+  color: #17613e;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
-@media (max-width: 900px) {
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero {
-        flex-direction: column;
-    }
+.hidden {
+  display: none;
 }
 
-@media (max-width: 600px) {
-    .cards {
-        grid-template-columns: 1fr;
-    }
+.small {
+  color: #60766a;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-    h1 {
-        font-size: 44px;
-    }
+.loading {
+  color: #198754;
+  font-weight: bold;
+}
 
-    nav {
-        display: none;
-    }
+@media(max-width:700px) {
+  .header-content h1 {
+    font-size: 28px;
+  }
+
+  .choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 22px;
+  }
 }
 </style>
 </head>
@@ -321,435 +235,667 @@ footer {
 <body>
 
 <header>
-    <div class="logo">Bio<span>Media</span> 🧬</div>
+  <div class="header-content">
+    <div class="logo">🧬 Bio<span>Media</span></div>
 
-    <nav>
-        <a onclick="scrollToTool()">Проверить информацию</a>
-        <a onclick="showAbout()">Как это работает</a>
-    </nav>
+    <h1>Стань биологическим медиадетективом 🔎</h1>
+
+    <p>
+      Найди биологическое утверждение, которое тебе встретилось в интернете,
+      и самостоятельно проведи его научное расследование.
+    </p>
+
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
 </header>
 
-<section class="hero">
+<div class="container">
 
-    <div class="hero-text">
+<!-- STEP 1 -->
 
-        <div class="badge">8–9 класс · Биология</div>
+<div class="step active" id="step1">
+  <div class="card">
 
-        <h1>
-            Учись проверять<br>
-            <span>биологическую информацию</span>
-        </h1>
+    <div class="step-number">РАССЛЕДОВАНИЕ · 01</div>
 
-        <p>
-            BioMedia помогает анализировать источники,
-            находить доказательства и самостоятельно
-            оценивать достоверность информации.
-        </p>
+    <h2>📝 Принеси своё утверждение</h2>
 
-        <button class="button" onclick="scrollToTool()">
-            Начать проверку →
-        </button>
+    <p>
+      Вспомни информацию о биологии, которую ты увидел(а) в TikTok,
+      Instagram, YouTube, Telegram, статье или услышал(а) от кого-то.
+    </p>
+
+    <textarea
+      id="claim"
+      placeholder="Например: «Антибиотики помогают при гриппе»"
+    ></textarea>
+
+    <p class="small">
+      Не знаешь, что взять? Можно использовать любое биологическое
+      утверждение, которое кажется тебе интересным или сомнительным.
+    </p>
+
+    <button onclick="startInvestigation()">
+      🔎 Начать расследование
+    </button>
+
+  </div>
+</div>
+
+
+<!-- STEP 2 -->
+
+<div class="step" id="step2">
+  <div class="card">
+
+    <div class="step-number">РАССЛЕДОВАНИЕ · 02</div>
+
+    <h2>🎯 Что именно нужно проверить?</h2>
+
+    <div class="source-box">
+      <strong>Твоё утверждение:</strong>
+      <p id="claimDisplay"></p>
+    </div>
+
+    <div class="ai-box" id="questionAI">
+      <div class="ai-title">🤖 ИИ-наставник</div>
+      <div id="questionText">Формирую исследовательский вопрос...</div>
+    </div>
+
+    <button onclick="goToStep(3)">
+      Перейти к поиску →
+    </button>
+
+  </div>
+</div>
+
+
+<!-- STEP 3 -->
+
+<div class="step" id="step3">
+  <div class="card">
+
+    <div class="step-number">РАССЛЕДОВАНИЕ · 03</div>
+
+    <h2>🌐 Найди информацию</h2>
+
+    <p>
+      Теперь самостоятельно найди информацию, которая поможет проверить
+      твоё утверждение.
+    </p>
+
+    <div class="ai-box">
+      <div class="ai-title">💡 Подсказка</div>
+      <div id="searchPrompt">
+        Подготовь поисковый запрос...
+      </div>
+    </div>
+
+    <h3>🔗 Источник 1</h3>
+
+    <input
+      id="source1Title"
+      placeholder="Название источника"
+    >
+
+    <input
+      id="source1Url"
+      placeholder="Ссылка на источник"
+    >
+
+    <textarea
+      id="source1Text"
+      placeholder="Вставь сюда важный фрагмент найденного источника"
+    ></textarea>
+
+
+    <h3>🔗 Источник 2</h3>
+
+    <input
+      id="source2Title"
+      placeholder="Название источника"
+    >
+
+    <input
+      id="source2Url"
+      placeholder="Ссылка на источник"
+    >
+
+    <textarea
+      id="source2Text"
+      placeholder="Вставь сюда важный фрагмент второго источника"
+    ></textarea>
+
+    <button onclick="analyzeSources()">
+      🧠 Проанализировать источники
+    </button>
+
+    <div id="sourceAnalysis" class="ai-box hidden"></div>
+
+    <button
+      id="step4Button"
+      class="secondary hidden"
+      onclick="goToStep(4)"
+    >
+      Продолжить расследование →
+    </button>
+
+  </div>
+</div>
+
+
+<!-- STEP 4 -->
+
+<div class="step" id="step4">
+  <div class="card">
+
+    <div class="step-number">РАССЛЕДОВАНИЕ · 04</div>
+
+    <h2>⚖️ Сравни информацию</h2>
+
+    <p>
+      Теперь посмотри на найденные источники и реши,
+      насколько они помогают проверить исходное утверждение.
+    </p>
+
+    <div class="choice-grid">
+
+      <button
+        class="choice"
+        onclick="selectChoice(this, 'strong')"
+      >
+        🟢 Доказательства достаточно убедительные
+      </button>
+
+      <button
+        class="choice"
+        onclick="selectChoice(this, 'weak')"
+      >
+        🟡 Доказательства слабые
+      </button>
+
+      <button
+        class="choice"
+        onclick="selectChoice(this, 'contradiction')"
+      >
+        🔴 Источники противоречат друг другу
+      </button>
+
+      <button
+        class="choice"
+        onclick="selectChoice(this, 'insufficient')"
+      >
+        ⚪ Информации недостаточно
+      </button>
 
     </div>
 
-    <div class="hero-card">
+    <div class="ai-box">
+      <div class="ai-title">🤖 Вопрос от ИИ-наставника</div>
 
-        <div class="cell">🧬</div>
+      <p>
+        Какие признаки помогают тебе определить,
+        насколько найденная информация заслуживает доверия?
+      </p>
 
-        <h3>Медиаграмотность + биология</h3>
+      <textarea
+        id="comparison"
+        placeholder="Напиши свой ответ..."
+      ></textarea>
+    </div>
 
-        <p>
-            Не просто получи ответ.
-            Научись самостоятельно проверять информацию
-            и аргументировать свой вывод.
-        </p>
+    <button onclick="goToStep(5)">
+      Перейти к вердикту →
+    </button>
+
+  </div>
+</div>
+
+
+<!-- STEP 5 -->
+
+<div class="step" id="step5">
+  <div class="card">
+
+    <div class="step-number">РАССЛЕДОВАНИЕ · 05</div>
+
+    <h2>🏆 Вынеси собственный вердикт</h2>
+
+    <p>
+      Теперь, опираясь на найденную информацию,
+      самостоятельно оцени исходное утверждение.
+    </p>
+
+    <div class="choice-grid">
+
+      <button
+        class="choice"
+        onclick="selectVerdict(this, 'true')"
+      >
+        🟢 Достоверно
+      </button>
+
+      <button
+        class="choice"
+        onclick="selectVerdict(this, 'false')"
+      >
+        🔴 Недостоверно
+      </button>
+
+      <button
+        class="choice"
+        onclick="selectVerdict(this, 'insufficient')"
+      >
+        🟡 Недостаточно данных
+      </button>
 
     </div>
 
-</section>
+    <h3>✍️ Объясни свой вывод</h3>
+
+    <textarea
+      id="finalAnswer"
+      placeholder="Напиши 1–3 предложения: почему ты пришёл(ла) к такому выводу?"
+    ></textarea>
+
+    <button onclick="finishInvestigation()">
+      🤖 Получить обратную связь ИИ
+    </button>
+
+  </div>
+</div>
 
 
-<section class="section">
+<!-- RESULT -->
 
-    <h2 class="section-title">Что можно сделать?</h2>
+<div class="step" id="result">
+  <div class="card">
 
-    <div class="cards">
+    <div class="step-number">РАССЛЕДОВАНИЕ ЗАВЕРШЕНО</div>
 
-        <div class="card" onclick="scrollToTool()">
-            <div class="icon">🔎</div>
-            <h3>Проверить утверждение</h3>
-            <p>
-                Разбери биологическое утверждение
-                по пяти этапам.
-            </p>
-        </div>
+    <h2>🎉 Отличная работа, медиадетектив!</h2>
 
-        <div class="card">
-            <div class="icon">📰</div>
-            <h3>Проверить источник</h3>
-            <p>
-                Научись оценивать автора,
-                источник и доказательства.
-            </p>
-        </div>
+    <div class="score" id="score">—</div>
 
-        <div class="card">
-            <div class="icon">🧪</div>
-            <h3>Научное утверждение</h3>
-            <p>
-                Проверь биологическую информацию
-                с позиции научных данных.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🧠</div>
-            <h3>Сделать вывод</h3>
-            <p>
-                Сформулируй собственную позицию
-                и обоснуй её.
-            </p>
-        </div>
-
+    <div class="badge">
+      🧬 Биологический медиадетектив
     </div>
 
-</section>
-
-
-<section class="section" id="tool">
-
-    <h2 class="section-title">
-        🔎 Проверить биологическое утверждение
-    </h2>
-
-    <div class="tool">
-
-        <div id="claim">
-
-            <div class="step-number">
-                Биологическое утверждение
-            </div>
-
-            <div class="result-box">
-                <strong>
-                    «Митохондрии встречаются только
-                    в клетках животных».
-                </strong>
-            </div>
-
-        </div>
-
-
-        <div class="progress">
-            <div class="progress-bar" id="progress"></div>
-        </div>
-
-
-        <div class="step active">
-
-            <div class="step-number">ШАГ 1 / 5 · Смысл утверждения</div>
-
-            <div class="question">
-                Что именно утверждается в этом сообщении?
-                Сформулируй его своими словами.
-            </div>
-
-            <textarea id="answer1"
-                placeholder="Напиши свой ответ..."></textarea>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">ШАГ 2 / 5 · Источник</div>
-
-            <div class="question">
-                Откуда ты получил бы информацию для проверки
-                этого утверждения?
-            </div>
-
-            <div class="options">
-
-                <div class="option" onclick="selectOption(this)">
-                    📱 Социальная сеть
-                </div>
-
-                <div class="option" onclick="selectOption(this)">
-                    📰 Новостной сайт
-                </div>
-
-                <div class="option" onclick="selectOption(this)">
-                    📚 Учебник
-                </div>
-
-                <div class="option" onclick="selectOption(this)">
-                    🧪 Научная статья
-                </div>
-
-                <div class="option" onclick="selectOption(this)">
-                    🌐 Образовательный научный сайт
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">ШАГ 3 / 5 · Доказательства</div>
-
-            <div class="question">
-                Какие доказательства ты бы искал,
-                чтобы проверить это утверждение?
-            </div>
-
-            <textarea
-                placeholder="Напиши, какие данные или доказательства нужны...">
-            </textarea>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">ШАГ 4 / 5 · Проверка</div>
-
-            <div class="question">
-                Какие источники ты бы использовал
-                для окончательной проверки?
-            </div>
-
-            <textarea
-                placeholder="Например: учебник, научная статья...">
-            </textarea>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">ШАГ 5 / 5 · Твой вывод</div>
-
-            <div class="question">
-                Как ты оцениваешь это утверждение?
-            </div>
-
-            <div class="options">
-
-                <div class="option" onclick="selectOption(this)">
-                    🟢 Достоверная информация
-                </div>
-
-                <div class="option" onclick="selectOption(this)">
-                    🟡 Требует дополнительной проверки
-                </div>
-
-                <div class="option" onclick="selectOption(this)">
-                    🔴 Недостоверная информация
-                </div>
-
-            </div>
-
-            <br>
-
-            <textarea
-                placeholder="Обоснуй свой вывод...">
-            </textarea>
-
-        </div>
-
-
-        <div class="controls">
-
-            <button
-                class="button secondary"
-                id="back"
-                onclick="previousStep()">
-                ← Назад
-            </button>
-
-            <button
-                class="button"
-                id="next"
-                onclick="nextStep()">
-                Далее →
-            </button>
-
-        </div>
-
-
-        <div class="result" id="result">
-
-            <h2>🎉 Анализ завершён</h2>
-
-            <div class="result-box">
-
-                <h3>Научный разбор</h3>
-
-                <p>
-                    Утверждение «Митохондрии встречаются
-                    только в клетках животных» является
-                    <strong>недостоверным</strong>.
-                </p>
-
-                <p>
-                    Митохондрии встречаются в клетках
-                    различных эукариотических организмов,
-                    в том числе животных и растений.
-                </p>
-
-                <h3>Что ты потренировал?</h3>
-
-                <div class="skills">
-
-                    <div class="skill">
-                        🔎 Анализ информации
-                    </div>
-
-                    <div class="skill">
-                        📚 Оценка источника
-                    </div>
-
-                    <div class="skill">
-                        🧪 Работа с доказательствами
-                    </div>
-
-                    <div class="skill">
-                        🧠 Аргументация
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="ai-box">
+      <div class="ai-title">🤖 Обратная связь ИИ</div>
+      <div id="finalFeedback">
+        Анализирую твоё расследование...
+      </div>
     </div>
 
-</section>
+    <button onclick="location.reload()">
+      🔎 Провести новое расследование
+    </button>
 
+  </div>
+</div>
 
-<footer>
-    <strong>BioMedia</strong><br>
-    Развитие медиаграмотности школьников
-    в процессе изучения биологии.
-</footer>
+</div>
 
 
 <script>
 
-let currentStep = 0;
-
-const steps = document.querySelectorAll(".step");
-
-const progress = document.getElementById("progress");
-
-const nextButton = document.getElementById("next");
-
-const backButton = document.getElementById("back");
-
-const result = document.getElementById("result");
+let currentStep = 1;
+let claim = "";
+let selectedComparison = "";
+let selectedVerdict = "";
+let sourceAnalysisText = "";
 
 
-function updateStep() {
+function goToStep(step) {
 
-    steps.forEach((step, index) => {
+  document.querySelectorAll(".step").forEach(el => {
+    el.classList.remove("active");
+  });
 
-        step.classList.toggle(
-            "active",
-            index === currentStep
-        );
+  document.getElementById("step" + step).classList.add("active");
+
+  currentStep = step;
+
+  const progress = step * 20;
+
+  document.getElementById("progressBar").style.width =
+    progress + "%";
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+async function askAI(messages) {
+
+  try {
+
+    const response = await fetch("/api/chat", {
+
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify({
+        messages: messages
+      })
 
     });
 
-    progress.style.width =
-        ((currentStep + 1) / steps.length * 100) + "%";
+    const data = await response.json();
 
-    backButton.style.visibility =
-        currentStep === 0 ? "hidden" : "visible";
-
-    nextButton.textContent =
-        currentStep === steps.length - 1
-        ? "Завершить анализ"
-        : "Далее →";
-
-}
-
-
-function nextStep() {
-
-    if (currentStep < steps.length - 1) {
-
-        currentStep++;
-
-        updateStep();
-
-    } else {
-
-        steps.forEach(step => {
-            step.style.display = "none";
-        });
-
-        document.querySelector(".controls").style.display = "none";
-
-        document.querySelector(".progress").style.display = "none";
-
-        result.style.display = "block";
-
+    if (!response.ok) {
+      throw new Error(data.error || "Ошибка сервера");
     }
 
+    return data.response;
+
+  } catch(error) {
+
+    console.error(error);
+
+    return "⚠️ Сейчас ИИ недоступен. Проверь подключение и попробуй ещё раз.";
+
+  }
 }
 
 
-function previousStep() {
+async function startInvestigation() {
 
-    if (currentStep > 0) {
+  claim = document.getElementById("claim").value.trim();
 
-        currentStep--;
+  if (!claim) {
 
-        updateStep();
+    alert("Сначала введи своё биологическое утверждение.");
 
+    return;
+  }
+
+  document.getElementById("claimDisplay").textContent = claim;
+
+  goToStep(2);
+
+  const question = await askAI([
+
+    {
+      role: "user",
+      content:
+      `Ученик хочет проверить следующее биологическое утверждение:
+
+"${claim}"
+
+Сформулируй один чёткий исследовательский вопрос,
+который поможет проверить это утверждение.
+
+Не говори пока, правда это или ложь.
+Не давай готовый ответ.
+Ответ должен быть коротким и понятным школьнику 8–9 класса.`
     }
 
+  ]);
+
+  document.getElementById("questionText").textContent =
+    question;
+
+
+  const searchPrompt = await askAI([
+
+    {
+      role: "user",
+      content:
+      `Для проверки биологического утверждения:
+
+"${claim}"
+
+Предложи 2–3 поисковых запроса,
+которые школьник может использовать
+для поиска научной информации.
+
+Не проверяй утверждение сам.
+Не сообщай готовый ответ.
+Просто предложи поисковые запросы.`
+    }
+
+  ]);
+
+  document.getElementById("searchPrompt").textContent =
+    searchPrompt;
 }
 
 
-function selectOption(element) {
+function selectChoice(button, value) {
 
-    const options =
-        element.parentElement.querySelectorAll(".option");
+  document.querySelectorAll(".choice").forEach(btn => {
+    btn.classList.remove("selected");
+  });
 
-    options.forEach(option =>
-        option.classList.remove("selected")
-    );
+  button.classList.add("selected");
 
-    element.classList.add("selected");
-
+  selectedComparison = value;
 }
 
 
-function scrollToTool() {
+function selectVerdict(button, value) {
 
-    document.getElementById("tool")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+  document.querySelectorAll(".choice").forEach(btn => {
+    btn.classList.remove("selected");
+  });
 
+  button.classList.add("selected");
+
+  selectedVerdict = value;
 }
 
 
-function showAbout() {
+async function analyzeSources() {
+
+  const title1 =
+    document.getElementById("source1Title").value;
+
+  const url1 =
+    document.getElementById("source1Url").value;
+
+  const text1 =
+    document.getElementById("source1Text").value;
+
+  const title2 =
+    document.getElementById("source2Title").value;
+
+  const url2 =
+    document.getElementById("source2Url").value;
+
+  const text2 =
+    document.getElementById("source2Text").value;
+
+
+  if (!text1 && !text2) {
 
     alert(
-        "BioMedia помогает школьнику самостоятельно анализировать биологическую информацию: источник → доказательства → проверка → собственный вывод."
+      "Добавь хотя бы один фрагмент найденного источника."
     );
 
+    return;
+  }
+
+
+  const box =
+    document.getElementById("sourceAnalysis");
+
+  box.classList.remove("hidden");
+
+  box.innerHTML =
+    '<div class="loading">🤖 ИИ анализирует найденную информацию...</div>';
+
+
+  const prompt = `Ученик проверяет биологическое утверждение:
+
+"${claim}"
+
+Он нашёл следующие источники.
+
+ИСТОЧНИК 1:
+Название: ${title1}
+Ссылка: ${url1}
+Текст/фрагмент:
+${text1}
+
+ИСТОЧНИК 2:
+Название: ${title2}
+Ссылка: ${url2}
+Текст/фрагмент:
+${text2}
+
+Помоги ученику оценить источники.
+
+Обязательно:
+1. Не выдумывай факты, которых нет в предоставленном тексте.
+2. Не говори просто "правда" или "ложь".
+3. Укажи, какие признаки повышают или снижают надёжность источников.
+4. Обрати внимание на автора, дату, научные данные и ссылки.
+5. Укажи, достаточно ли информации для уверенного вывода.
+6. В конце задай ученику один вопрос для самостоятельного размышления.
+
+Ответ структурируй короткими пунктами.`;
+
+  const result = await askAI([
+    {
+      role: "user",
+      content: prompt
+    }
+  ]);
+
+
+  sourceAnalysisText = result;
+
+  box.innerHTML =
+    '<div class="ai-title">🤖 Анализ ИИ</div>' +
+    '<div>' +
+    result.replace(/\n/g, "<br>") +
+    '</div>';
+
+
+  document
+    .getElementById("step4Button")
+    .classList.remove("hidden");
 }
 
 
-updateStep();
+async function finishInvestigation() {
+
+  if (!selectedVerdict) {
+
+    alert("Выбери свой вердикт.");
+
+    return;
+  }
+
+
+  const answer =
+    document.getElementById("finalAnswer").value.trim();
+
+
+  if (!answer) {
+
+    alert(
+      "Напиши хотя бы несколько предложений, объясняющих твой вывод."
+    );
+
+    return;
+  }
+
+
+  document.querySelectorAll(".step").forEach(el => {
+    el.classList.remove("active");
+  });
+
+  document.getElementById("result").classList.add("active");
+
+  document.getElementById("progressBar").style.width = "100%";
+
+
+  const feedback =
+    document.getElementById("finalFeedback");
+
+  feedback.innerHTML =
+    '<div class="loading">🤖 ИИ оценивает твоё расследование...</div>';
+
+
+  const comparison =
+    document.getElementById("comparison").value;
+
+
+  const prompt = `Ты проверяешь учебное расследование школьника 8–9 класса.
+
+Исходное биологическое утверждение:
+"${claim}"
+
+Выбранный учеником вердикт:
+"${selectedVerdict}"
+
+Обоснование ученика:
+"${answer}"
+
+Его ответ о сравнении источников:
+"${comparison}"
+
+Анализ источников:
+"${sourceAnalysisText}"
+
+Дай педагогически полезную обратную связь.
+
+Оцени:
+1. Насколько ученик понял, что именно проверяется.
+2. Насколько хорошо он анализировал источники.
+3. Учитывал ли доказательства.
+4. Насколько обоснован его итоговый вывод.
+5. Что он сделал хорошо.
+6. Что можно улучшить.
+
+Не унижай ученика и не ставь диагнозов.
+
+Дай итоговую оценку от 0 до 100.
+
+ВАЖНО:
+Если в предоставленных данных недостаточно информации,
+не утверждай самостоятельно, что исходное биологическое утверждение
+истинно или ложно.
+
+Ответ на русском языке.`;
+
+  const result = await askAI([
+    {
+      role: "user",
+      content: prompt
+    }
+  ]);
+
+
+  const scoreMatch =
+    result.match(/(\d{1,3})\s*\/\s*100/);
+
+  if (scoreMatch) {
+
+    document.getElementById("score").textContent =
+      scoreMatch[1] + "/100";
+
+  } else {
+
+    document.getElementById("score").textContent =
+      "✓";
+
+  }
+
+
+  feedback.innerHTML =
+    result.replace(/\n/g, "<br>");
+}
 
 </script>
 
